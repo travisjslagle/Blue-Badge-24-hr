@@ -12,11 +12,11 @@
 
 // FETCH to this API:
 const nasaKey = 'UV9GIvC2mGysQN2b2cDOgQ4pg7uJiVJRsLcQVgr4';
-const nasaBase = 'https://api.nasa.gov';
+const nasaBase = 'https://api.nasa.gov/planetary/earth/imagery';
 const nasaDate = '2014-02-01'  // this for now as Jul 31st did not return an image
 const dim = 0.15;
 
-let nasaUrl = `${nasaBase}&lon=${userLong}&lat=${userLat}&date=${nasaDate}&dim=${dim}&api_key=${nasaKey}`;
+let nasaUrl = `${nasaBase}?lon=${userLong}&lat=${userLat}&date=${nasaDate}&dim=${dim}&api_key=${nasaKey}`;
 
 
 // looking at response in Postman -- I do not think this returns JSON data, just an image. Look up .blob() methods 
