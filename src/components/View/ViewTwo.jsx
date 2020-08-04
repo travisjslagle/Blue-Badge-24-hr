@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import APIData from '../api-data/APIData';
-
+import UserLocation from '../map/Location';
 // import styled from 'styled-components';
 
 const useStyles = makeStyles({
@@ -38,6 +38,7 @@ export default function MediaCard() {
 
   return (
     <div>
+        <UserLocation />
         {/* <Row>
             <Column> */}
                 <Card className={classes.root}>
