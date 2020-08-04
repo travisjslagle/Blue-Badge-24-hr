@@ -3,6 +3,8 @@ import '../../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import APIData from '../../API-Data/APIData';
+import UserLocation from '../../Location/UserLocation';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +23,14 @@ export default function FloatingActionButtons() {
   return (
     <div className={classes.root}>
       
-      
+        
       <Fab variant="extended">
         <NavigationIcon className={classes.extendedIcon} />
         Navigate
       </Fab>
+        <UserLocation></UserLocation>
+        <APIData></APIData>
+      
     </div>
   );
 }
