@@ -13,8 +13,8 @@ const useStyles = makeStyles({
         flexGrow: 1,
     },
     color: {
-        backgroundColor: '#383838',
-        color: '#f9d606'
+        backgroundColor: '#002855',
+        color: '#FCE300'
     }
 })
 
@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className= {classes.root}>
             <AppBar position='static'>
             <Toolbar className= {classes.color}>
-                <Typography variant= 'h4' className= {classes.title} id='navTitle'>Trayvar</Typography>
+                <Typography variant= 'h4' className= {classes.title} id='navTitle'>[ Trayvar ]</Typography>
             </Toolbar>
             </AppBar>
         </div>
