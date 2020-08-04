@@ -1,13 +1,22 @@
 import React, {useState} from 'react';
+import { get } from 'http';
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import NavigationIcon from '@material-ui/icons/Navigation';
+
 
 const APIData = (props) => {
     // const [nasaImg, setNasaImg] = useState();
     // const [weather, setWeather] = useState({});
     // const [restaurants, setRestaurants] = useState({});
+
+    let userLong = props.userLong;
+    let userLat = props.userLat;
     const getData = () => {
         // Downtown Indy
-        let userLong = -86.156;
-        let userLat = 39.768;
+        
+        console.log(userLat);
+        
         // NASA
         const nasaKey = 'UV9GIvC2mGysQN2b2cDOgQ4pg7uJiVJRsLcQVgr4';
         const nasaBase = 'https://api.nasa.gov/planetary/earth/imagery';
@@ -41,11 +50,32 @@ const APIData = (props) => {
             .then(json => console.log(json))
             .catch(err => console.log(err));
     }
-    return(
-        <div className="main">
-            <div>
-            </div>
-        </div>
-    )
-}
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          '& > *': {
+            margin: theme.spacing(40),
+          },
+        },
+        extendedIcon: {
+          marginRight: theme.spacing(1),
+        },
+      }));
+      
+      
+        const classes = useStyles();
+      
+        return (
+          <div className={classes.root}>
+            
+              
+              <Fab variant="extended" onClick={getData}>
+                  <NavigationIcon className={classes.extendedIcon}  />
+                  Navigate
+              </Fab>
+              
+            
+          </div>
+        );
+      }
+
 export default APIData;

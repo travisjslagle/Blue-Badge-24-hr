@@ -1,5 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import APIData from '../API-Data/APIData';
+
+
+
 const UserLocation = () => {
+
+const [userLat, setUserLat] = useState(0);
+const [userLong, setUserLong] = useState(0);
+
+
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -8,9 +17,8 @@ var options = {
   function success(pos) {
     var crd = pos.coords;
     console.log('Your current position is:');
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
+    setUserLat(crd.latitude);
+    setUserLong(crd.longitude);
   }
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
@@ -18,6 +26,7 @@ var options = {
   navigator.geolocation.getCurrentPosition(success, error, options);
   return (
       <div>
+          <APIData userLat={userLat} userLong={userLong} />
       </div>
   )
 }
